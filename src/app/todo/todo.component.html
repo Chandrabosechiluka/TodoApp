@@ -1,0 +1,14 @@
+<div>
+    <h1>ToDo App</h1>
+    <input type="text" [(ngModel)]="newTask" placeholder="Enter a task" />
+    <button (click)="addTask()">Add Task</button>
+  
+    <ul>
+      <li *ngFor="let task of tasks">
+        <span [class.completed]="task.completed">{{ task.title }}</span>
+        <button (click)="toggleTask(task.id)">Toggle Complete</button>
+        <button (click)="deleteTask(task.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
